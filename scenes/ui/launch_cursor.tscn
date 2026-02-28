@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://dbxargdbd8olk"]
+
+[ext_resource type="Texture2D" uid="uid://8y6mdmss7m05" path="res://assets/cursor-white-24.png" id="1_jvovq"]
+[ext_resource type="Script" uid="uid://baafxj8mr36gb" path="res://scenes/ui/launch_cursor.gd" id="1_s1ivf"]
+[ext_resource type="Texture2D" uid="uid://csts0naec5b7k" path="res://assets/cursor-grow-radius-24-Sheet.png" id="2_s1ivf"]
+[ext_resource type="Texture2D" uid="uid://cltcstvltypa" path="res://assets/arrow-white-24.png" id="4_f1t7i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1t7i"]
+atlas = ExtResource("2_s1ivf")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_npt1g"]
+atlas = ExtResource("2_s1ivf")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dajai"]
+atlas = ExtResource("2_s1ivf")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2m8jx"]
+atlas = ExtResource("2_s1ivf")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rvc22"]
+atlas = ExtResource("2_s1ivf")
+region = Rect2(96, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f77qd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1t7i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_npt1g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dajai")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2m8jx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rvc22")
+}],
+"loop": false,
+"name": &"grow",
+"speed": 20.0
+}]
+
+[node name="LaunchCursor" type="Node2D" unique_id=1283492629]
+script = ExtResource("1_s1ivf")
+
+[node name="StaticCursorSprite" type="Sprite2D" parent="." unique_id=1388144767]
+modulate = Color(1, 1, 1, 0.5882353)
+texture = ExtResource("1_jvovq")
+
+[node name="GrowAnimatedSprite" type="AnimatedSprite2D" parent="." unique_id=1792176798]
+modulate = Color(0.13333334, 0.1254902, 0.20392157, 1)
+self_modulate = Color(1, 1, 1, 0.5882353)
+sprite_frames = SubResource("SpriteFrames_f77qd")
+animation = &"grow"
+frame = 4
+frame_progress = 1.0
+
+[node name="DirectionArrowSprite" type="Sprite2D" parent="." unique_id=70005922]
+modulate = Color(1, 1, 1, 0.5882353)
+texture = ExtResource("4_f1t7i")
+offset = Vector2(24, 0)

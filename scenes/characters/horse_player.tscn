@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bf8l5xrmmuh41"]
+
+[ext_resource type="Script" uid="uid://bxmogwg77emkv" path="res://scenes/characters/horse_player.gd" id="1_ersk7"]
+[ext_resource type="Texture2D" uid="uid://dwci8yofvnu7x" path="res://assets/horse.png" id="1_wfdm2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wfdm2"]
+radius = 9.0
+height = 22.0
+
+[node name="HorsePlayer" type="RigidBody2D" unique_id=570504137]
+script = ExtResource("1_ersk7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=450168388]
+texture = ExtResource("1_wfdm2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2038257002]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_wfdm2")

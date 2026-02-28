@@ -1,0 +1,2 @@
+class_name HorsePlayer
+extends RigidBody2D
