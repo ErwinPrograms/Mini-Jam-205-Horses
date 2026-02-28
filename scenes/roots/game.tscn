@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bq0khrtdtveh8"]
 
+[ext_resource type="Script" uid="uid://cug7cshhmy0s0" path="res://scenes/roots/game.gd" id="1_jmdlf"]
 [ext_resource type="PackedScene" uid="uid://bf8l5xrmmuh41" path="res://scenes/characters/horse_player.tscn" id="1_m46om"]
 [ext_resource type="PackedScene" uid="uid://cqbtxxdm0qyl1" path="res://scenes/terrain/border_body.tscn" id="2_yj28s"]
 [ext_resource type="Texture2D" uid="uid://dwtx00a36142e" path="res://assets/grassy-floor.png" id="3_qnb58"]
@@ -9,6 +10,7 @@
 size = Vector2(320, 24)
 
 [node name="Game" type="Node2D" unique_id=368179119]
+script = ExtResource("1_jmdlf")
 
 [node name="HorsePlayer" parent="." unique_id=570504137 instance=ExtResource("1_m46om")]
 position = Vector2(132, 77)

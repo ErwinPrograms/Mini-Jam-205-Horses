@@ -1,7 +1,10 @@
 class_name LaunchCursor
 extends Node2D
 
+signal drag_released(force_scale: Vector2)
+
 var _is_dragging: bool = false
+var _drag_distance: Vector2 = Vector2.ZERO
 
 @onready var grow_animated_sprite: AnimatedSprite2D = $GrowAnimatedSprite
 @onready var direction_arrow_sprite: Sprite2D = $DirectionArrowSprite
@@ -13,9 +16,18 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_released("primary") and _is_dragging:
 		on_primary_released()
 		
-	if event is InputEventMouseMotion:
-		print("CursorPosition: %s\nMousePosition: %s" % [global_position, event.position])
-		direction_arrow_sprite.rotation = event.position.angle_to_point(global_position)
+	if _is_dragging and event is InputEventMouseMotion:
+		#print("CursorPosition: %s\nMousePosition: %s" % [global_position, event.position])
+		_drag_distance =  global_position - event.position
+		print("Drag distance: %s" %_drag_distance)
+		direction_arrow_sprite.rotation = _drag_distance.angle()
+		
+		# Magic numbers yippie
+		direction_arrow_sprite.scale.x = clampf(
+			_drag_distance.length() / 50,
+			0.5,
+			2.0
+			)
 
 func on_primary_pressed() -> void:
 	visible = true
@@ -26,3 +38,17 @@ func on_primary_pressed() -> void:
 
 func on_primary_released() -> void:
 	visible = false
+	drag_released.emit(calculate_force_from_distance(_drag_distance))
+
+# Calculates the force scale based on the mouse position since the player clicked to start the cursor
+func calculate_force_from_distance(distance: Vector2) -> Vector2:
+	print(distance)
+	var result: Vector2 = distance.normalized()  * clampf(
+		distance.length(),
+		0.5,
+		2
+	)
+	
+	print("force scale: %s" % result)
+	
+	return result

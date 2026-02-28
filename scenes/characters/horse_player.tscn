@@ -8,6 +8,7 @@ radius = 9.0
 height = 22.0
 
 [node name="HorsePlayer" type="RigidBody2D" unique_id=570504137]
+lock_rotation = true
 script = ExtResource("1_ersk7")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=450168388]
