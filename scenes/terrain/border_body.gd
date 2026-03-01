@@ -1,0 +1,2 @@
+class_name BorderBody
+extends StaticBody2D

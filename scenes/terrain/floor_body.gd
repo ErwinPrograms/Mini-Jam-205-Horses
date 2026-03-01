@@ -1,0 +1,2 @@
+class_name FloorBody
+extends StaticBody2D

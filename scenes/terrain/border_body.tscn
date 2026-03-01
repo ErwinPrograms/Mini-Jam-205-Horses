@@ -1,8 +1,17 @@
 [gd_scene format=3 uid="uid://cqbtxxdm0qyl1"]
 
+[ext_resource type="Script" uid="uid://bxy4cpc8amxc5" path="res://scenes/terrain/border_body.gd" id="1_qfs1t"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qfs1t"]
+friction = 0.0
+
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_h6q80"]
 
 [node name="BorderBody" type="StaticBody2D" unique_id=569925918]
+collision_layer = 8
+collision_mask = 0
+physics_material_override = SubResource("PhysicsMaterial_qfs1t")
+script = ExtResource("1_qfs1t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1724072364]
 rotation = 1.5707964

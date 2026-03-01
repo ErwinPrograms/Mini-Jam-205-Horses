@@ -17,9 +17,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		on_primary_released()
 		
 	if _is_dragging and event is InputEventMouseMotion:
-		#print("CursorPosition: %s\nMousePosition: %s" % [global_position, event.position])
 		_drag_distance =  global_position - event.position
-		print("Drag distance: %s" %_drag_distance)
 		direction_arrow_sprite.rotation = _drag_distance.angle()
 		
 		# Magic numbers yippie
@@ -42,13 +40,10 @@ func on_primary_released() -> void:
 
 # Calculates the force scale based on the mouse position since the player clicked to start the cursor
 func calculate_force_from_distance(distance: Vector2) -> Vector2:
-	print(distance)
 	var result: Vector2 = distance.normalized()  * clampf(
 		distance.length(),
 		0.5,
 		2
 	)
-	
-	print("force scale: %s" % result)
 	
 	return result

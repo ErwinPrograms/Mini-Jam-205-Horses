@@ -3,33 +3,30 @@
 [ext_resource type="Script" uid="uid://cug7cshhmy0s0" path="res://scenes/roots/game.gd" id="1_jmdlf"]
 [ext_resource type="PackedScene" uid="uid://bf8l5xrmmuh41" path="res://scenes/characters/horse_player.tscn" id="1_m46om"]
 [ext_resource type="PackedScene" uid="uid://cqbtxxdm0qyl1" path="res://scenes/terrain/border_body.tscn" id="2_yj28s"]
-[ext_resource type="Texture2D" uid="uid://dwtx00a36142e" path="res://assets/grassy-floor.png" id="3_qnb58"]
 [ext_resource type="PackedScene" uid="uid://dbxargdbd8olk" path="res://scenes/ui/launch_cursor.tscn" id="4_80xvq"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yj28s"]
-size = Vector2(320, 24)
+[ext_resource type="PackedScene" uid="uid://bowqhc08rt075" path="res://scenes/terrain/floor_body.tscn" id="4_n0tf4"]
+[ext_resource type="AudioStream" uid="uid://dt7fbuw8ovq2g" path="res://assets/music/Music_Loop_8_Full.ogg" id="6_n0tf4"]
 
 [node name="Game" type="Node2D" unique_id=368179119]
 script = ExtResource("1_jmdlf")
 
 [node name="HorsePlayer" parent="." unique_id=570504137 instance=ExtResource("1_m46om")]
-position = Vector2(132, 77)
+position = Vector2(142, 143)
 
 [node name="WorldNodes" type="Node" parent="." unique_id=544868373]
 
 [node name="BorderBody" parent="WorldNodes" unique_id=569925918 instance=ExtResource("2_yj28s")]
 
-[node name="FloorBody" type="StaticBody2D" parent="WorldNodes" unique_id=859357505]
+[node name="FloorBody" parent="WorldNodes" unique_id=1332572446 instance=ExtResource("4_n0tf4")]
 position = Vector2(0, 156)
-
-[node name="Sprite2D" type="Sprite2D" parent="WorldNodes/FloorBody" unique_id=845155960]
-texture = ExtResource("3_qnb58")
-centered = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldNodes/FloorBody" unique_id=114358912]
-position = Vector2(160, 12)
-shape = SubResource("RectangleShape2D_yj28s")
 
 [node name="ControllerNodes" type="Node" parent="." unique_id=22596498]
 
 [node name="LaunchCursor" parent="ControllerNodes" unique_id=1283492629 instance=ExtResource("4_80xvq")]
+visible = false
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=344980592]
+stream = ExtResource("6_n0tf4")
+volume_db = -20.0
+autoplay = true
+parameters/looping = true

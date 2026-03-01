@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bowqhc08rt075"]
+
+[ext_resource type="Texture2D" uid="uid://dwtx00a36142e" path="res://assets/grassy-floor.png" id="1_svyac"]
+[ext_resource type="Script" uid="uid://muvprnac51e5" path="res://scenes/terrain/floor_body.gd" id="1_xjm48"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yj28s"]
+size = Vector2(320, 24)
+
+[node name="FloorBody" type="StaticBody2D" unique_id=1332572446]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_xjm48")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=263870465]
+texture = ExtResource("1_svyac")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1524857625]
+position = Vector2(160, 12)
+shape = SubResource("RectangleShape2D_yj28s")
