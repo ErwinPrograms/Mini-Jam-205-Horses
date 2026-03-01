@@ -7,6 +7,8 @@ extends RigidBody2D
 var _remaining_jumps: int
 var _in_air: bool
 
+@onready var sprite_2d: Sprite2D = $Sprite2D
+
 func _ready() -> void:
 	_in_air = false
 	_remaining_jumps = max_jumps
@@ -24,6 +26,9 @@ func on_drag_released(force_scale: Vector2) -> void:
 	linear_velocity += force_scale * launch_power
 	_remaining_jumps += -1
 	#print("Remaining jumps: %s\nIn Air: %s" % [_remaining_jumps, _in_air])
+	
+
+	sprite_2d.flip_h = linear_velocity.x < 0
 	
 
 func _on_body_shape_entered(body_rid: RID, body: Node, body_shape_index: int, local_shape_index: int) -> void:

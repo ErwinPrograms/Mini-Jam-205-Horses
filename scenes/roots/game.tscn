@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cug7cshhmy0s0" path="res://scenes/roots/game.gd" id="1_jmdlf"]
 [ext_resource type="PackedScene" uid="uid://bf8l5xrmmuh41" path="res://scenes/characters/horse_player.tscn" id="1_m46om"]
+[ext_resource type="Texture2D" uid="uid://b0dnfpxpt4wa7" path="res://assets/background-320-180.png" id="2_dimhi"]
 [ext_resource type="PackedScene" uid="uid://cqbtxxdm0qyl1" path="res://scenes/terrain/border_body.tscn" id="2_yj28s"]
 [ext_resource type="PackedScene" uid="uid://dbxargdbd8olk" path="res://scenes/ui/launch_cursor.tscn" id="4_80xvq"]
 [ext_resource type="PackedScene" uid="uid://bowqhc08rt075" path="res://scenes/terrain/floor_body.tscn" id="4_n0tf4"]
@@ -9,6 +10,11 @@
 
 [node name="Game" type="Node2D" unique_id=368179119]
 script = ExtResource("1_jmdlf")
+
+[node name="Background320180" type="Sprite2D" parent="." unique_id=316795862]
+z_index = -1
+texture = ExtResource("2_dimhi")
+centered = false
 
 [node name="HorsePlayer" parent="." unique_id=570504137 instance=ExtResource("1_m46om")]
 position = Vector2(142, 143)
