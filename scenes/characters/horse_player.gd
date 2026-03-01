@@ -19,13 +19,13 @@ var _in_air: bool = false:
 		return _in_air
 var _remaining_health: int = max_health:
 	set(value):
+		_remaining_health = value
+		took_damage.emit()
+		
 		if value <= 0:
 			_remaining_health = 0
 			die()
 			return
-		if value < _remaining_health:
-			took_damage.emit()
-		_remaining_health = value
 	get:
 		return _remaining_health
 

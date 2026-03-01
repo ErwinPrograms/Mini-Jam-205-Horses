@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cc2j00chmnyy8"]
+
+[ext_resource type="Script" uid="uid://b2myjc2talm5b" path="res://scenes/ui/health_display_container.gd" id="1_vv0df"]
+
+[node name="HealthDisplayContainer" type="FlowContainer" unique_id=1389441148]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 67.0
+grow_horizontal = 2
+script = ExtResource("1_vv0df")
+filled_hearts = 3

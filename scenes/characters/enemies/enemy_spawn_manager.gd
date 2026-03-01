@@ -9,7 +9,6 @@ func _ready() -> void:
 	pass
 
 func _on_spawn_wave_timer_timeout() -> void:
-	print("spawning wave")
 	# spawn new wave
 	var amount: int = num_spawned_waves / 5 + 1
 	for _i in range(amount):

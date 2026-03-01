@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://b2368r0ewr55n"]
+
+[ext_resource type="Texture2D" uid="uid://n3km3x4awsyt" path="res://assets/sprites/heart-full-8.png" id="1_62sgg"]
+[ext_resource type="Script" uid="uid://csmnimh8t78xh" path="res://scenes/ui/ui_heart.gd" id="1_njcea"]
+
+[node name="UIHeart" type="TextureRect" unique_id=858869015]
+offset_right = 24.0
+offset_bottom = 24.0
+texture = ExtResource("1_62sgg")
+script = ExtResource("1_njcea")

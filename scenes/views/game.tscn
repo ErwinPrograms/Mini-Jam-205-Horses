@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://bowqhc08rt075" path="res://scenes/terrain/floor_body.tscn" id="4_n0tf4"]
 [ext_resource type="AudioStream" uid="uid://dt7fbuw8ovq2g" path="res://assets/music/Music_Loop_8_Full.ogg" id="6_n0tf4"]
 [ext_resource type="PackedScene" uid="uid://dleysodfbmsdr" path="res://scenes/characters/enemies/enemy_spawn_manager.tscn" id="8_bi265"]
+[ext_resource type="PackedScene" uid="uid://dwe0rogyddw52" path="res://scenes/ui/game_ui.tscn" id="9_4te5h"]
+[ext_resource type="PackedScene" uid="uid://cdjn0ir01tj31" path="res://scenes/ui/game_over_screen.tscn" id="10_v6rvo"]
 
 [node name="Game" type="Node2D" unique_id=368179119]
 script = ExtResource("1_jmdlf")
@@ -45,3 +47,8 @@ parameters/looping = true
 
 [node name="UICanvas" type="CanvasLayer" parent="." unique_id=1930226412]
 process_mode = 3
+
+[node name="GameUI" parent="UICanvas" unique_id=355713589 instance=ExtResource("9_4te5h")]
+
+[node name="GameOverScreen" parent="UICanvas" unique_id=1623709558 instance=ExtResource("10_v6rvo")]
+z_index = 3
