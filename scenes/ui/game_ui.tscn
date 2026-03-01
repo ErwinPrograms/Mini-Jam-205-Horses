@@ -2,6 +2,13 @@
 
 [ext_resource type="Script" uid="uid://c57fey4ij8165" path="res://scenes/ui/game_ui.gd" id="1_gwk6t"]
 [ext_resource type="PackedScene" uid="uid://cc2j00chmnyy8" path="res://scenes/ui/health_display_container.tscn" id="2_xjfbv"]
+[ext_resource type="FontFile" uid="uid://c8ohfea5gxd3t" path="res://assets/fonts/PixelifySans-VariableFont_wght.ttf" id="3_bma8u"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fct72"]
+font = ExtResource("3_bma8u")
+font_color = Color(0.7058824, 0.32156864, 0.32156864, 1)
+outline_size = 4
+outline_color = Color(0.23137255, 0.078431375, 0.078431375, 1)
 
 [node name="GameUI" type="Control" unique_id=355713589]
 layout_mode = 3
@@ -27,3 +34,10 @@ theme_override_constants/margin_bottom = 10
 
 [node name="HealthDisplayContainer" parent="MarginContainer" unique_id=1389441148 instance=ExtResource("2_xjfbv")]
 layout_mode = 2
+
+[node name="ScoreLabel" type="Label" parent="MarginContainer" unique_id=179642609]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "000"
+label_settings = SubResource("LabelSettings_fct72")

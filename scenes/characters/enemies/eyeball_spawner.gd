@@ -20,6 +20,8 @@ func _on_spawn_delay_timeout() -> void:
 	new_eyeball.position = position
 	new_eyeball.hover_height = randf_range(20, 150)
 	
+	new_eyeball.died.connect(SignalHub.emit_point_scored)
+	
 	get_parent().add_child(new_eyeball)
 	
 	hide()

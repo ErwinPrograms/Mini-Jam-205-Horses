@@ -15,6 +15,5 @@ func _on_spawn_wave_timer_timeout() -> void:
 		var new_spawner: EyeballSpawner = EYEBALL_SPAWNER.instantiate()
 		get_parent().add_child(new_spawner)
 		new_spawner.spawn_at(randf_range(20, 300))
-	
 	# increment num spawned waves
 	num_spawned_waves += 1
