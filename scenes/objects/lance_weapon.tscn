@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cgerjl4w3soyo"]
+
+[ext_resource type="Script" uid="uid://b523u2no7orhr" path="res://scenes/objects/lance_weapon.gd" id="1_pd21u"]
+[ext_resource type="Texture2D" uid="uid://dc7lol0j3gn0b" path="res://assets/lance.png" id="1_seja1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_onb2o"]
+size = Vector2(25, 9)
+
+[node name="LanceWeapon" type="Area2D" unique_id=1017408127]
+collision_layer = 32
+collision_mask = 6
+script = ExtResource("1_pd21u")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=858266617]
+texture = ExtResource("1_seja1")
+offset = Vector2(20, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1688139811]
+position = Vector2(20.5, 0.5)
+shape = SubResource("RectangleShape2D_onb2o")

@@ -16,6 +16,7 @@ var _in_air: bool = false:
 		return _in_air
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var lance_weapon: LanceWeapon = $LanceWeapon
 
 func _ready() -> void:
 	_in_air = false
@@ -25,6 +26,8 @@ func connect_to_cursor(cursor: LaunchCursor):
 	cursor.drag_released.connect(on_drag_released)
 
 func on_drag_released(force_scale: Vector2) -> void:
+	lance_weapon.fire_at_angle(force_scale.normalized().angle())
+	
 	# Verticality is dampened instead of disabling force
 	if _in_air and _remaining_jumps <= 0:
 		if force_scale.y < 0:
@@ -35,9 +38,7 @@ func on_drag_released(force_scale: Vector2) -> void:
 	_remaining_jumps += -1
 	#print("Remaining jumps: %s\nIn Air: %s" % [_remaining_jumps, _in_air])
 	
-
 	sprite_2d.flip_h = linear_velocity.x < 0
-	
 
 func _on_body_shape_entered(body_rid: RID, body: Node, body_shape_index: int, local_shape_index: int) -> void:
 	if body is FloorBody:

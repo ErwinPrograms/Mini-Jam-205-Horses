@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bxmogwg77emkv" path="res://scenes/characters/horse_player.gd" id="1_ersk7"]
 [ext_resource type="Texture2D" uid="uid://dwci8yofvnu7x" path="res://assets/horse.png" id="1_wfdm2"]
+[ext_resource type="PackedScene" uid="uid://cgerjl4w3soyo" path="res://scenes/objects/lance_weapon.tscn" id="3_gvtg4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wfdm2"]
 radius = 9.0
@@ -21,6 +22,8 @@ texture = ExtResource("1_wfdm2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2038257002]
 position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_wfdm2")
+
+[node name="LanceWeapon" parent="." unique_id=1017408127 instance=ExtResource("3_gvtg4")]
 
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
 [connection signal="body_shape_exited" from="." to="." method="_on_body_shape_exited"]
