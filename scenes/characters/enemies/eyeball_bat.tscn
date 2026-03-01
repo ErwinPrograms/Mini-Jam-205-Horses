@@ -65,6 +65,7 @@ shape = SubResource("CapsuleShape2D_ll80v")
 
 [node name="StunTimer" type="Timer" parent="." unique_id=825373236]
 wait_time = 0.5
+one_shot = true
 
 [node name="HitAudio" type="AudioStreamPlayer2D" parent="." unique_id=78089535]
 stream = ExtResource("3_22owr")

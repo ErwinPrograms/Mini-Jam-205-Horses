@@ -11,6 +11,7 @@
 
 [node name="Game" type="Node2D" unique_id=368179119]
 script = ExtResource("1_jmdlf")
+metadata/_edit_vertical_guides_ = [0.0]
 
 [node name="BackgroundSprite" type="Sprite2D" parent="." unique_id=316795862]
 z_index = -1
@@ -42,3 +43,11 @@ parameters/looping = true
 
 [node name="EyeballBat" parent="EnemiesContainer" unique_id=1831133132 instance=ExtResource("8_3wmit")]
 position = Vector2(205, 135)
+
+[node name="EyeballBat2" parent="EnemiesContainer" unique_id=1212820403 instance=ExtResource("8_3wmit")]
+position = Vector2(248, 138)
+hover_height = 50.0
+
+[node name="EyeballBat3" parent="EnemiesContainer" unique_id=1425325421 instance=ExtResource("8_3wmit")]
+position = Vector2(285, 138)
+hover_height = 20.0

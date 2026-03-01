@@ -13,7 +13,7 @@ height = 22.0
 
 [node name="HorsePlayer" type="RigidBody2D" unique_id=570504137]
 z_index = 2
-collision_mask = 25
+collision_mask = 24
 physics_material_override = SubResource("PhysicsMaterial_gvtg4")
 lock_rotation = true
 contact_monitor = true
