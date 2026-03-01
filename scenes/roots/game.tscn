@@ -11,7 +11,7 @@
 [node name="Game" type="Node2D" unique_id=368179119]
 script = ExtResource("1_jmdlf")
 
-[node name="Background320180" type="Sprite2D" parent="." unique_id=316795862]
+[node name="BackgroundSprite" type="Sprite2D" parent="." unique_id=316795862]
 z_index = -1
 texture = ExtResource("2_dimhi")
 centered = false

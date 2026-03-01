@@ -1,11 +1,19 @@
 class_name HorsePlayer
 extends RigidBody2D
 
+var _JUMP_TEXTURE: Texture2D = preload("uid://b1yrtrcigajii")
+var _LAND_TEXTURE: Texture2D = preload("uid://dwci8yofvnu7x")
+
 @export var launch_power: float = 75
 @export var max_jumps: int = 3
 
 var _remaining_jumps: int
-var _in_air: bool
+var _in_air: bool = false:
+	set(value):
+		var sprite_texture: Texture2D = _JUMP_TEXTURE if value else _LAND_TEXTURE
+		sprite_2d.texture = sprite_texture
+	get: 
+		return _in_air
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
