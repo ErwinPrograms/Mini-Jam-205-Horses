@@ -13,7 +13,11 @@ config_version=5
 config/name="Mini Jam 205 - Horses"
 run/main_scene="uid://bq0khrtdtveh8"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://sc6o3nhn55iv"
+
+[autoload]
+
+SignalHub="*uid://cdaabu101kyrk"
 
 [display]
 

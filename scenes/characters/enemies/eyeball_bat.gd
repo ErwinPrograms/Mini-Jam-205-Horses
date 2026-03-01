@@ -8,8 +8,11 @@ const SPEED: float = 50.0
 const MAX_HEALTH: int = 2
 const DEATH_SOUND: AudioStream = preload("uid://cqj801am12a3h")
 
-@export var stun_duration: float = 1
-@export var hover_height: float = 100.0
+@export var stun_duration: float = 1.5
+@export var hover_height: float = 100.0:
+	set(value):
+		hover_height = value
+		_hover_y = 156 - hover_height
 
 var _current_health: int = MAX_HEALTH:
 	set(value):
@@ -27,17 +30,20 @@ var _is_stunned: bool = false:
 	set(value):
 		if value and !_is_stunned:
 			stun_timer.start()
+		if value and _is_stunned:
+			stun_timer.stop()
+			stun_timer.start()
 		_is_stunned = value
 	get:
 		return _is_stunned
 
 var _hover_y: float
 
-@onready var stun_timer: Timer = $StunTimer
-@onready var hitbox_area: Area2D = $HitboxArea
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-@onready var hit_audio: AudioStreamPlayer2D = $HitAudio
+@onready var hitbox_area: Area2D = $HitboxArea
 @onready var hurtbox_area: Area2D = $HurtboxArea
+@onready var stun_timer: Timer = $StunTimer
+@onready var hit_audio: AudioStreamPlayer2D = $HitAudio
 
 
 func _ready() -> void:
@@ -78,19 +84,22 @@ func take_damage(amount: int) -> void:
 func stun_self() -> void:
 	# Many of the stun effects are in _physics_process
 	_is_stunned = true
-	hitbox_area.monitoring = false
+	hitbox_area.set_deferred("monitorable", false)
 
 
 func _on_stun_timer_timeout() -> void:
-	hitbox_area.monitoring = true
+	hitbox_area.set_deferred("monitorable", true)
 	
 	_is_stunned = false
 
 func die() -> void:
 	died.emit()
-	hurtbox_area.area_entered.disconnect(_on_hurtbox_area_area_entered)
+	hurtbox_area.area_entered.disconnect(_on_hurtbox_area_entered)
+	hitbox_area.set_deferred("monitorable", false)
+	
 	hit_audio.stream = DEATH_SOUND
 	hit_audio.play()
+	
 	
 	var death_fade := get_tree().create_tween()
 	death_fade.tween_property(animated_sprite_2d, "modulate:a", 0, 1).set_trans(Tween.TRANS_CUBIC)
@@ -101,6 +110,6 @@ func die() -> void:
 	queue_free()
 
 
-func _on_hurtbox_area_area_entered(area: Area2D) -> void:
-	if area is LanceWeapon:
+func _on_hurtbox_area_entered(area: Area2D) -> void:
+	if area is LanceWeapon and !area.get_parent().sleeping:
 		take_damage(area.damage)

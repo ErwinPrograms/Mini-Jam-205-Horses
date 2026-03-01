@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bxmogwg77emkv" path="res://scenes/characters/horse_player.gd" id="1_ersk7"]
 [ext_resource type="Texture2D" uid="uid://sc6o3nhn55iv" path="res://assets/sprites/horse-knight-outline.png" id="2_gvtg4"]
 [ext_resource type="PackedScene" uid="uid://cgerjl4w3soyo" path="res://scenes/objects/lance_weapon.tscn" id="3_gvtg4"]
+[ext_resource type="AudioStream" uid="uid://cswhe2cgh3ex2" path="res://assets/sfx/shrink.wav" id="4_tgxn8"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gvtg4"]
 friction = 0.3
@@ -10,6 +11,9 @@ friction = 0.3
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wfdm2"]
 radius = 9.0
 height = 22.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gvtg4"]
+size = Vector2(17, 15)
 
 [node name="HorsePlayer" type="RigidBody2D" unique_id=570504137]
 z_index = 2
@@ -31,5 +35,19 @@ shape = SubResource("CapsuleShape2D_wfdm2")
 [node name="LanceWeapon" parent="." unique_id=1017408127 instance=ExtResource("3_gvtg4")]
 collision_layer = 128
 
+[node name="HurtboxArea" type="Area2D" parent="." unique_id=2139359950]
+collision_layer = 0
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxArea" unique_id=412847236]
+position = Vector2(-0.5, 2.5)
+shape = SubResource("RectangleShape2D_gvtg4")
+
+[node name="HurtAudio" type="AudioStreamPlayer2D" parent="." unique_id=1562501545]
+stream = ExtResource("4_tgxn8")
+volume_db = 10.0
+
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
 [connection signal="body_shape_exited" from="." to="." method="_on_body_shape_exited"]
+[connection signal="sleeping_state_changed" from="." to="." method="_on_sleeping_state_changed"]
+[connection signal="area_entered" from="HurtboxArea" to="." method="_on_hurtbox_area_entered"]

@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://dc7lol0j3gn0b" path="res://assets/sprites/lance.png" id="1_seja1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pd21u"]
-radius = 6.5
 height = 34.0
 
 [node name="LanceWeapon" type="Area2D" unique_id=1017408127]

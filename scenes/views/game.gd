@@ -5,3 +5,7 @@ extends Node2D
 
 func _ready() -> void:
 	horse_player.connect_to_cursor(launch_cursor)
+	SignalHub.game_over.connect(on_game_over)
+
+func on_game_over() -> void:
+	get_tree().paused = true

@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://bq0khrtdtveh8"]
 
-[ext_resource type="Script" uid="uid://cug7cshhmy0s0" path="res://scenes/roots/game.gd" id="1_jmdlf"]
+[ext_resource type="Script" uid="uid://cug7cshhmy0s0" path="res://scenes/views/game.gd" id="1_jmdlf"]
 [ext_resource type="PackedScene" uid="uid://bf8l5xrmmuh41" path="res://scenes/characters/horse_player.tscn" id="1_m46om"]
 [ext_resource type="Texture2D" uid="uid://b0dnfpxpt4wa7" path="res://assets/sprites/background-320-180.png" id="2_dimhi"]
 [ext_resource type="PackedScene" uid="uid://cqbtxxdm0qyl1" path="res://scenes/terrain/border_body.tscn" id="2_yj28s"]
 [ext_resource type="PackedScene" uid="uid://dbxargdbd8olk" path="res://scenes/ui/launch_cursor.tscn" id="4_80xvq"]
 [ext_resource type="PackedScene" uid="uid://bowqhc08rt075" path="res://scenes/terrain/floor_body.tscn" id="4_n0tf4"]
 [ext_resource type="AudioStream" uid="uid://dt7fbuw8ovq2g" path="res://assets/music/Music_Loop_8_Full.ogg" id="6_n0tf4"]
-[ext_resource type="PackedScene" uid="uid://deannrps0wbic" path="res://scenes/characters/enemies/eyeball_bat.tscn" id="8_3wmit"]
+[ext_resource type="PackedScene" uid="uid://dleysodfbmsdr" path="res://scenes/characters/enemies/enemy_spawn_manager.tscn" id="8_bi265"]
 
 [node name="Game" type="Node2D" unique_id=368179119]
 script = ExtResource("1_jmdlf")
@@ -33,21 +33,15 @@ position = Vector2(0, 156)
 [node name="LaunchCursor" parent="ControllerNodes" unique_id=1283492629 instance=ExtResource("4_80xvq")]
 visible = false
 
+[node name="EnemiesContainer" type="Node" parent="." unique_id=1572193847]
+
+[node name="EnemySpawnManager" parent="EnemiesContainer" unique_id=720133095 instance=ExtResource("8_bi265")]
+
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=344980592]
 stream = ExtResource("6_n0tf4")
 volume_db = -20.0
 autoplay = true
 parameters/looping = true
 
-[node name="EnemiesContainer" type="Node" parent="." unique_id=1572193847]
-
-[node name="EyeballBat" parent="EnemiesContainer" unique_id=1831133132 instance=ExtResource("8_3wmit")]
-position = Vector2(205, 135)
-
-[node name="EyeballBat2" parent="EnemiesContainer" unique_id=1212820403 instance=ExtResource("8_3wmit")]
-position = Vector2(248, 138)
-hover_height = 50.0
-
-[node name="EyeballBat3" parent="EnemiesContainer" unique_id=1425325421 instance=ExtResource("8_3wmit")]
-position = Vector2(285, 138)
-hover_height = 20.0
+[node name="UICanvas" type="CanvasLayer" parent="." unique_id=1930226412]
+process_mode = 3

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://boehsabeu4rnr"]
 
-[ext_resource type="PackedScene" uid="uid://bq0khrtdtveh8" path="res://scenes/roots/game.tscn" id="1_uxngh"]
+[ext_resource type="PackedScene" uid="uid://bq0khrtdtveh8" path="res://scenes/views/game.tscn" id="1_uxngh"]
 [ext_resource type="Texture2D" uid="uid://dwci8yofvnu7x" path="res://assets/sprites/horse.png" id="2_imggx"]
 [ext_resource type="Script" uid="uid://nds47eg76q5y" path="res://scenes/test/character_body_2d.gd" id="2_vo6dn"]
 

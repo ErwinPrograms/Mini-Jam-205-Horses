@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://oo6rmo4aparu"]
+
+[ext_resource type="Script" uid="uid://cuhqgal46waa3" path="res://scenes/characters/enemies/eyeball_spawner.gd" id="1_s1ebp"]
+[ext_resource type="Texture2D" uid="uid://qyoi16fskd3o" path="res://assets/sprites/spawn-indicator.png" id="2_y2bdi"]
+
+[node name="EyeballSpawner" type="Node2D" unique_id=1140606359]
+script = ExtResource("1_s1ebp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1801284055]
+texture = ExtResource("2_y2bdi")
+offset = Vector2(0, -12)
+
+[node name="SpawnDelayTimer" type="Timer" parent="." unique_id=1259562539]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="SpawnDelayTimer" to="." method="_on_spawn_delay_timeout"]
