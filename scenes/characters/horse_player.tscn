@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://bf8l5xrmmuh41"]
 
 [ext_resource type="Script" uid="uid://bxmogwg77emkv" path="res://scenes/characters/horse_player.gd" id="1_ersk7"]
-[ext_resource type="Texture2D" uid="uid://dwci8yofvnu7x" path="res://assets/horse.png" id="1_wfdm2"]
+[ext_resource type="Texture2D" uid="uid://sc6o3nhn55iv" path="res://assets/horse-knight-outline.png" id="2_gvtg4"]
 [ext_resource type="PackedScene" uid="uid://cgerjl4w3soyo" path="res://scenes/objects/lance_weapon.tscn" id="3_gvtg4"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gvtg4"]
+friction = 0.3
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wfdm2"]
 radius = 9.0
@@ -10,6 +13,7 @@ height = 22.0
 
 [node name="HorsePlayer" type="RigidBody2D" unique_id=570504137]
 collision_mask = 25
+physics_material_override = SubResource("PhysicsMaterial_gvtg4")
 lock_rotation = true
 contact_monitor = true
 max_contacts_reported = 1
@@ -17,7 +21,7 @@ linear_damp = 0.5
 script = ExtResource("1_ersk7")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=450168388]
-texture = ExtResource("1_wfdm2")
+texture = ExtResource("2_gvtg4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2038257002]
 position = Vector2(0, 2)

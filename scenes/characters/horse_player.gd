@@ -1,8 +1,8 @@
 class_name HorsePlayer
 extends RigidBody2D
 
-var _JUMP_TEXTURE: Texture2D = preload("uid://b1yrtrcigajii")
-var _LAND_TEXTURE: Texture2D = preload("uid://dwci8yofvnu7x")
+var _JUMP_TEXTURE: Texture2D = preload("uid://67lqo35u85wl")
+var _LAND_TEXTURE: Texture2D = preload("uid://sc6o3nhn55iv")
 
 @export var launch_power: float = 75
 @export var max_jumps: int = 3
