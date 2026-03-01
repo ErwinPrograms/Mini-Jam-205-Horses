@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dc7lol0j3gn0b"
-path="res://.godot/imported/lance.png-0c6f2e6a8425219895f7e889fcd945c0.ctex"
+uid="uid://cltcstvltypa"
+path="res://.godot/imported/arrow-white-24.png-3c757dfc752572d9b9e33a106fb98d3b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/lance.png"
-dest_files=["res://.godot/imported/lance.png-0c6f2e6a8425219895f7e889fcd945c0.ctex"]
+source_file="res://assets/sprites/arrow-white-24.png"
+dest_files=["res://.godot/imported/arrow-white-24.png-3c757dfc752572d9b9e33a106fb98d3b.ctex"]
 
 [params]
 

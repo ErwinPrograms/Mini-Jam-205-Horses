@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwtx00a36142e"
-path="res://.godot/imported/grassy-floor.png-0f507409f4a9ad7747a78297a43d9690.ctex"
+uid="uid://b1yrtrcigajii"
+path="res://.godot/imported/horse-jump.png-7b0bd8f7228a3f3857e0ed2972399b0b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/grassy-floor.png"
-dest_files=["res://.godot/imported/grassy-floor.png-0f507409f4a9ad7747a78297a43d9690.ctex"]
+source_file="res://assets/sprites/horse-jump.png"
+dest_files=["res://.godot/imported/horse-jump.png-7b0bd8f7228a3f3857e0ed2972399b0b.ctex"]
 
 [params]
 

@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://deannrps0wbic"]
+
+[ext_resource type="Texture2D" uid="uid://c7wxjmmltadyf" path="res://assets/sprites/flying-eyeball-outline-Sheet.png" id="1_5xjl2"]
+[ext_resource type="Script" uid="uid://dubxrewgqi377" path="res://scenes/characters/enemies/eyeball_bat.gd" id="1_xpa2w"]
+[ext_resource type="AudioStream" uid="uid://dgtdwjek060k8" path="res://assets/sfx/hurt_1.wav" id="3_22owr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xpa2w"]
+atlas = ExtResource("1_5xjl2")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22owr"]
+atlas = ExtResource("1_5xjl2")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ll80v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xpa2w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22owr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ll80v"]
+radius = 6.0
+height = 24.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5xjl2"]
+radius = 6.0
+
+[node name="EyeballBat" type="CharacterBody2D" unique_id=1831133132]
+collision_layer = 0
+collision_mask = 24
+script = ExtResource("1_xpa2w")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1381386191]
+sprite_frames = SubResource("SpriteFrames_ll80v")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=283836188]
+position = Vector2(0, -2)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_ll80v")
+
+[node name="HitboxArea" type="Area2D" parent="." unique_id=839888115]
+collision_layer = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxArea" unique_id=1646017564]
+shape = SubResource("CircleShape2D_5xjl2")
+
+[node name="HurtboxArea" type="Area2D" parent="." unique_id=1102691138]
+collision_layer = 2
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxArea" unique_id=517192807]
+visible = false
+position = Vector2(0, -2)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_ll80v")
+
+[node name="StunTimer" type="Timer" parent="." unique_id=825373236]
+wait_time = 0.5
+
+[node name="HitAudio" type="AudioStreamPlayer2D" parent="." unique_id=78089535]
+stream = ExtResource("3_22owr")
+
+[connection signal="area_entered" from="HurtboxArea" to="." method="_on_hurtbox_area_area_entered"]
+[connection signal="timeout" from="StunTimer" to="." method="_on_stun_timer_timeout"]

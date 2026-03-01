@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bf8l5xrmmuh41"]
 
 [ext_resource type="Script" uid="uid://bxmogwg77emkv" path="res://scenes/characters/horse_player.gd" id="1_ersk7"]
-[ext_resource type="Texture2D" uid="uid://sc6o3nhn55iv" path="res://assets/horse-knight-outline.png" id="2_gvtg4"]
+[ext_resource type="Texture2D" uid="uid://sc6o3nhn55iv" path="res://assets/sprites/horse-knight-outline.png" id="2_gvtg4"]
 [ext_resource type="PackedScene" uid="uid://cgerjl4w3soyo" path="res://scenes/objects/lance_weapon.tscn" id="3_gvtg4"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gvtg4"]
@@ -12,6 +12,7 @@ radius = 9.0
 height = 22.0
 
 [node name="HorsePlayer" type="RigidBody2D" unique_id=570504137]
+z_index = 2
 collision_mask = 25
 physics_material_override = SubResource("PhysicsMaterial_gvtg4")
 lock_rotation = true
@@ -28,6 +29,7 @@ position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_wfdm2")
 
 [node name="LanceWeapon" parent="." unique_id=1017408127 instance=ExtResource("3_gvtg4")]
+collision_layer = 128
 
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
 [connection signal="body_shape_exited" from="." to="." method="_on_body_shape_exited"]

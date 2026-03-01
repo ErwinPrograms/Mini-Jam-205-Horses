@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1yrtrcigajii"
-path="res://.godot/imported/horse-jump.png-5849ef33fb354cafcfa158efb6241bbf.ctex"
+uid="uid://c7wxjmmltadyf"
+path="res://.godot/imported/flying-eyeball-outline-Sheet.png-179ac6025197d02ec2e313f5441a2424.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/horse-jump.png"
-dest_files=["res://.godot/imported/horse-jump.png-5849ef33fb354cafcfa158efb6241bbf.ctex"]
+source_file="res://assets/sprites/flying-eyeball-outline-Sheet.png"
+dest_files=["res://.godot/imported/flying-eyeball-outline-Sheet.png-179ac6025197d02ec2e313f5441a2424.ctex"]
 
 [params]
 

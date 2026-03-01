@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bowqhc08rt075"]
 
-[ext_resource type="Texture2D" uid="uid://dwtx00a36142e" path="res://assets/grassy-floor.png" id="1_svyac"]
+[ext_resource type="Texture2D" uid="uid://dwtx00a36142e" path="res://assets/sprites/grassy-floor.png" id="1_svyac"]
 [ext_resource type="Script" uid="uid://muvprnac51e5" path="res://scenes/terrain/floor_body.gd" id="1_xjm48"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yj28s"]

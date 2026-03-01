@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwci8yofvnu7x"
-path="res://.godot/imported/horse.png-a1df5ac03dca5ce4416c53ec0d146e5b.ctex"
+uid="uid://sc6o3nhn55iv"
+path="res://.godot/imported/horse-knight-outline.png-741303d5035476ff222f7419f35d1c0f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/horse.png"
-dest_files=["res://.godot/imported/horse.png-a1df5ac03dca5ce4416c53ec0d146e5b.ctex"]
+source_file="res://assets/sprites/horse-knight-outline.png"
+dest_files=["res://.godot/imported/horse-knight-outline.png-741303d5035476ff222f7419f35d1c0f.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0dnfpxpt4wa7"
-path="res://.godot/imported/background-320-180.png-d336f70af4ee39d7f009bfb75b7673b3.ctex"
+uid="uid://67lqo35u85wl"
+path="res://.godot/imported/horse-knight-jump-outline.png-ab9362cae81dcbc78c83dd1cf303079d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/background-320-180.png"
-dest_files=["res://.godot/imported/background-320-180.png-d336f70af4ee39d7f009bfb75b7673b3.ctex"]
+source_file="res://assets/sprites/horse-knight-jump-outline.png"
+dest_files=["res://.godot/imported/horse-knight-jump-outline.png-ab9362cae81dcbc78c83dd1cf303079d.ctex"]
 
 [params]
 

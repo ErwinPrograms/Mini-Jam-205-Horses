@@ -1,7 +1,7 @@
 class_name LanceWeapon
 extends Area2D
 
-@export var damage: int
+@export var damage: int = 1
 
 # size
 

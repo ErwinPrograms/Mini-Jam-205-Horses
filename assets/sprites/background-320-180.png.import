@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cltcstvltypa"
-path="res://.godot/imported/arrow-white-24.png-3bd81cd674a1ab9870b09fd31fcdbb57.ctex"
+uid="uid://b0dnfpxpt4wa7"
+path="res://.godot/imported/background-320-180.png-84ae48f1a9e0ca35d9e42a8e74d45e25.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/arrow-white-24.png"
-dest_files=["res://.godot/imported/arrow-white-24.png-3bd81cd674a1ab9870b09fd31fcdbb57.ctex"]
+source_file="res://assets/sprites/background-320-180.png"
+dest_files=["res://.godot/imported/background-320-180.png-84ae48f1a9e0ca35d9e42a8e74d45e25.ctex"]
 
 [params]
 
