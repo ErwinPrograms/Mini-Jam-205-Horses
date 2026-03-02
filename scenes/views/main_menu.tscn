@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://dyryae66s6fme"]
+
+[ext_resource type="Script" uid="uid://dgm65d0qdjay6" path="res://scenes/views/main_menu.gd" id="1_70mm7"]
+[ext_resource type="FontFile" uid="uid://c8ohfea5gxd3t" path="res://assets/fonts/PixelifySans-VariableFont_wght.ttf" id="1_u42ap"]
+[ext_resource type="Texture2D" uid="uid://b6ucqlqsla48t" path="res://assets/sprites/charger-last-stand-mm-bg-320-180.png" id="2_t2ti7"]
+[ext_resource type="LabelSettings" uid="uid://bdtfnb0bua6k0" path="res://resources/themes/red-16.tres" id="3_t7i0u"]
+[ext_resource type="AudioStream" uid="uid://cgr3doj5dqq0o" path="res://assets/music/Music_Loop_8_Bass.ogg" id="4_10idf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_70mm7"]
+font = ExtResource("1_u42ap")
+font_size = 24
+font_color = Color(0.7058824, 0.32156864, 0.32156864, 1)
+outline_size = 4
+outline_color = Color(0.23137255, 0.078431375, 0.078431375, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_u42ap"]
+font = ExtResource("1_u42ap")
+font_color = Color(0.29411766, 0.5019608, 0.7921569, 1)
+outline_size = 2
+outline_color = Color(0.13137081, 0.27355534, 0.47008514, 1)
+
+[sub_resource type="Animation" id="Animation_70mm7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_t7i0u"]
+resource_name = "flash"
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.5, 0.6, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_10idf"]
+_data = {
+&"RESET": SubResource("Animation_70mm7"),
+&"flash": SubResource("Animation_t7i0u")
+}
+
+[node name="MainMenu" type="Control" unique_id=1974040100]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_70mm7")
+
+[node name="BackgroundArt" type="TextureRect" parent="." unique_id=1459823904]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_t2ti7")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1670641602]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="TitleLabel" type="Label" parent="MarginContainer" unique_id=1030541122]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Charger's Last Stand"
+label_settings = SubResource("LabelSettings_70mm7")
+
+[node name="InstructionLabel" type="Label" parent="MarginContainer" unique_id=870249175]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Left Click to Begin"
+label_settings = SubResource("LabelSettings_u42ap")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MarginContainer/InstructionLabel" unique_id=761850865]
+libraries/ = SubResource("AnimationLibrary_10idf")
+autoplay = &"flash"
+
+[node name="HighScoreContainer" type="HBoxContainer" parent="MarginContainer" unique_id=238467004]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="DescriptionLabel" type="Label" parent="MarginContainer/HighScoreContainer" unique_id=570447474]
+layout_mode = 2
+text = "High Score: "
+label_settings = ExtResource("3_t7i0u")
+
+[node name="ScoreLabel" type="Label" parent="MarginContainer/HighScoreContainer" unique_id=801575761]
+layout_mode = 2
+text = "000"
+label_settings = ExtResource("3_t7i0u")
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=175092120]
+stream = ExtResource("4_10idf")
+volume_db = -20.0
+autoplay = true
+parameters/looping = true
