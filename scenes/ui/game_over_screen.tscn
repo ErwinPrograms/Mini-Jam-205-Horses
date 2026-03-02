@@ -12,6 +12,7 @@ outline_size = 6
 outline_color = Color(0.22962222, 0.07761075, 0.07892414, 1)
 
 [node name="GameOverScreen" type="Control" unique_id=1623709558]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

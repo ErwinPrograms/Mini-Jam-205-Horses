@@ -9,6 +9,7 @@ var score: int = 0
 
 func _ready() -> void:
 	SignalHub.point_scored.connect(on_point_scored)
+	SignalHub.game_over.connect(on_game_over)
 
 func get_health_display() -> HealthDisplayContainer:
 	return health_display_container
@@ -16,3 +17,6 @@ func get_health_display() -> HealthDisplayContainer:
 func on_point_scored() -> void:
 	score += 1
 	score_label.text = "%03d" % score
+
+func on_game_over() -> void:
+	ScoreManager.high_score = score
