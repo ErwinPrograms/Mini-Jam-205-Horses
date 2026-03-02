@@ -28,10 +28,6 @@ func fade_to_scene(to_scene: PackedScene) -> void:
 
 func to_next_scene() -> void:
 	if next_scene:
-		var music_position: float = get_tree().current_scene.get_music_position()
-		
 		get_tree().change_scene_to_packed(next_scene)
-		
-		#get_tree().current_scene.set_music_position(music_position)
 		
 		next_scene = null
