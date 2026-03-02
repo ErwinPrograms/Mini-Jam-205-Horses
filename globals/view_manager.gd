@@ -12,7 +12,7 @@ func _ready() -> void:
 	add_child(fade_scene)
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_cancel"):
+	if event.is_action_pressed("restart"):
 		load_main_menu()
 
 func load_main_menu() -> void:

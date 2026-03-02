@@ -18,6 +18,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		
 	if _is_dragging and event is InputEventMouseMotion:
 		_drag_distance =  global_position - event.position
+		if SettingsManager.invert_controls: _drag_distance *= -1
 		direction_arrow_sprite.rotation = _drag_distance.angle()
 		
 		# Magic numbers yippie

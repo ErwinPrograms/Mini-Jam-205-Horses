@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b6ucqlqsla48t" path="res://assets/sprites/charger-last-stand-mm-bg-320-180.png" id="2_t2ti7"]
 [ext_resource type="LabelSettings" uid="uid://bdtfnb0bua6k0" path="res://resources/themes/red-16.tres" id="3_t7i0u"]
 [ext_resource type="AudioStream" uid="uid://cgr3doj5dqq0o" path="res://assets/music/Music_Loop_8_Bass.ogg" id="4_10idf"]
+[ext_resource type="PackedScene" uid="uid://bffb2wb0tmufu" path="res://scenes/ui/invert_controls_box.tscn" id="5_8v6pb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_70mm7"]
 font = ExtResource("1_u42ap")
@@ -115,6 +116,11 @@ label_settings = ExtResource("3_t7i0u")
 layout_mode = 2
 text = "000"
 label_settings = ExtResource("3_t7i0u")
+
+[node name="InvertControlsBox" parent="MarginContainer" unique_id=1375608318 instance=ExtResource("5_8v6pb")]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=175092120]
 stream = ExtResource("4_10idf")
