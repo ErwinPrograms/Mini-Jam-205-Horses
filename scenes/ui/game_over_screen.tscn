@@ -2,6 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://c8ohfea5gxd3t" path="res://assets/fonts/PixelifySans-VariableFont_wght.ttf" id="1_dnrai"]
 [ext_resource type="Script" uid="uid://dowcwfbv6od4r" path="res://scenes/ui/game_over_screen.gd" id="1_sopbp"]
+[ext_resource type="LabelSettings" uid="uid://bdtfnb0bua6k0" path="res://resources/themes/red-16.tres" id="3_bllgf"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_sopbp"]
 font = ExtResource("1_dnrai")
@@ -11,7 +12,6 @@ outline_size = 6
 outline_color = Color(0.22962222, 0.07761075, 0.07892414, 1)
 
 [node name="GameOverScreen" type="Control" unique_id=1623709558]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -36,3 +36,22 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Game Over"
 label_settings = SubResource("LabelSettings_sopbp")
+
+[node name="Label" type="Label" parent="." unique_id=338096490]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.5
+offset_top = -11.5
+offset_right = 112.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "
+
+
+Click to go back to main menu"
+label_settings = ExtResource("3_bllgf")
